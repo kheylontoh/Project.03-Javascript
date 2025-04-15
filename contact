@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4a6f28;
+            --secondary-color: #6b8c42;
+            --accent-color: #c0f597;
+            --text-color: #333;
+            --light-color: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-color);
+            color: var(--text-color);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+            nav ul li {
+                position: relative;
+            }
+
+                nav ul li a {
+                    text-decoration: none;
+                    color: white;
+                    font-weight: 500;
+                    padding: 0.5rem 0;
+                    transition: color 0.3s;
+                }
+
+                    nav ul li a:hover {
+                        color: var(--accent-color);
+                    }
+
+                    nav ul li a::after {
+                        content: '';
+                        position: absolute;
+                        width: 0;
+                        height: 2px;
+                        bottom: 0;
+                        left: 0;
+                        background-color: var(--accent-color);
+                        transition: width 0.3s;
+                    }
+
+                    nav ul li a:hover::after {
+                        width: 100%;
+                    }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        main {
+            padding: 6rem 20px 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+            .section-title::after {
+                content: '';
+                position: absolute;
+                width: 80px;
+                height: 3px;
+                background-color: var(--accent-color);
+                bottom: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+            .contact-info h2 {
+                color: var(--primary-color);
+                margin-bottom: 1.5rem;
+                position: relative;
+                padding-bottom: 10px;
+            }
+
+                .contact-info h2::after {
+                    content: '';
+                    position: absolute;
+                    width: 50px;
+                    height: 2px;
+                    background-color: var(--accent-color);
+                    bottom: 0;
+                    left: 0;
+                }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .info-icon {
+            color: var(--primary-color);
+            margin-right: 1rem;
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+            .contact-form h2 {
+                color: var(--primary-color);
+                margin-bottom: 1.5rem;
+                position: relative;
+                padding-bottom: 10px;
+            }
+
+                .contact-form h2::after {
+                    content: '';
+                    position: absolute;
+                    width: 50px;
+                    height: 2px;
+                    background-color: var(--accent-color);
+                    bottom: 0;
+                    left: 0;
+                }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+            .form-group label {
+                display: block;
+                margin-bottom: 0.5rem;
+                color: var(--text-color);
+            }
+
+            .form-group input,
+            .form-group textarea {
+                width: 100%;
+                padding: 0.5rem;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+
+            .form-group textarea {
+                resize: vertical;
+            }
+
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+            .submit-btn:hover {
+                background-color: var(--secondary-color);
+            }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">My Website</a>
+            <nav>
+                <ul>
+                    <li><a href="HTML website.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1 class="section-title">Contact Us</h1>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt info-icon"></i>
+                    <div>
+                        <strong>Address:</strong>
+                        <p>123 Main Street, Jakarta, Indonesia</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone info-icon"></i>
+                    <div>
+                        <strong>Phone:</strong>
+                        <p>(+62) 123-456-7890</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope info-icon"></i>
+                    <div>
+                        <strong>Email:</strong>
+                        <p>info@mywebsite.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h2>Get in Touch</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="Kheren">Name</label>
