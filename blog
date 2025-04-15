@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matcha Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #3a5a40;
+            --secondary: #588157;
+            --light: #dad7cd;
+            --dark: #1a1a1a;
+            --accent: #a3b18a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: var(--li);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+            nav ul li {
+                margin-left: 2rem;
+                position: relative;
+            }
+
+                nav ul li a {
+                    color: white;
+                    text-decoration: none;
+                    font-weight: 500;
+                    padding: 0.5rem 0;
+                    position: relative;
+                }
+
+                    nav ul li a::after {
+                        content: '';
+                        position: absolute;
+                        width: 0;
+                        height: 2px;
+                        background: white;
+                        bottom: 0;
+                        left: 0;
+                        transition: width 0.3s ease;
+                    }
+
+                    nav ul li a:hover::after {
+                        width: 100%;
+                    }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        main {
+            margin-top: 80px;
+            min-height: calc(100vh - 160px);
+            padding: 2rem 0;
+        }
+
+        .blog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            position: relative;
+        }
+
+            .section-title::after {
+                content: '';
+                position: absolute;
+                width: 80px;
+                height: 3px;
+                background: var(--accent);
+                bottom: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+            .blog-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .blog-card img {
+                width: 100%;
+                height: auto;
+            }
+
+        .blog-card-content {
+            padding: 1.5rem;
+        }
+
+            .blog-card-content h3 {
+                margin-bottom: 1rem;
+                color: var(--primary);
+            }
+
+            .blog-card-content p {
+                margin-bottom: 1rem;
+            }
+
+        footer {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">Matcha Blog</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="blog-container">
+            <h2 class="section-title">Latest Posts</h2>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <img src="matcha1.jpg" alt="Matcha Benefits">
+                    <div class="blog-card-content">
+                        <h3>Benefits of Matcha</h3>
+                        <p>Discover the numerous health benefits of matcha, from boosting metabolism to enhancing mood.</p>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <img src="matcha2.jpg" alt="Matcha Recipes">
+                    <div class="blog-card-content">
+                        <h3>Delicious Matcha Recipes</h3>
+                        <p>Try these easy and delicious recipes to incorporate matcha into your daily diet.</p>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <img src="matcha3.jpg" alt="Matcha History">
+                    <div class="blog-card-content">
+                        <h3>The History of Matcha</h3>
+                        <p>Learn about the rich history of matcha and its significance in Japanese culture.</p>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <img src="matcha4.jpg" alt="Matcha Ceremonies">
+                    <div class="blog-card-content">
+                        <h3>Matcha Tea Ceremonies</h3>
+                        <p>Explore the traditional tea ceremonies that highlight the beauty of matcha.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Matcha Blog. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
